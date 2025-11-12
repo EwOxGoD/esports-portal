@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль - Киберспорт Портал</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>🎮 ESPORTS PORTAL</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="/" class="nav-link">Главная</a>
+                <a href="/tournaments" class="nav-link">Турниры</a>
+                <a href="/teams" class="nav-link">Команды</a>
+                <a href="/news" class="nav-link">Новости</a>
+                <a href="/stats" class="nav-link">Статистика</a>
+                <a href="/profile" class="nav-link active">Профиль</a>
+            </div>
+            <div class="nav-auth">
+                <button class="btn-login">Войти</button>
+                <button class="btn-register">Регистрация</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Профиль игрока</h1>
+            <p>Управление вашим аккаунтом</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="profile-container" id="profileContainer">
+                <div class="profile-card">
+                    <h3>Информация о профиле</h3>
+                    <p>Для просмотра профиля необходимо войти в систему.</p>
+                    <button class="btn-primary" onclick="showLoginModal()">Войти</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🎮 ESPORTS PORTAL</h3>
+                    <p>Все для киберспортсменов</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Разделы</h4>
+                    <a href="/tournaments">Турниры</a>
+                    <a href="/teams">Команды</a>
+                    <a href="/news">Новости</a>
+                    <a href="/stats">Статистика</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Киберспорт Портал. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости - Киберспорт Портал</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>🎮 ESPORTS PORTAL</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="/" class="nav-link">Главная</a>
+                <a href="/tournaments" class="nav-link">Турниры</a>
+                <a href="/teams" class="nav-link">Команды</a>
+                <a href="/news" class="nav-link active">Новости</a>
+                <a href="/stats" class="nav-link">Статистика</a>
+                <a href="/profile" class="nav-link">Профиль</a>
+            </div>
+            <div class="nav-auth">
+                <button class="btn-login">Войти</button>
+                <button class="btn-register">Регистрация</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Киберспорт Новости</h1>
+            <p>Свежие новости, трансферы и события из мира киберспорта</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="page-controls">
+                <div class="filter-group">
+                    <select id="newsCategoryFilter" class="filter-select">
+                        <option value="">Все категории</option>
+                        <option value="tournament">🏆 Турниры</option>
+                        <option value="transfer">🔄 Трансферы</option>
+                        <option value="results">📊 Результаты</option>
+                        <option value="announcement">📢 Анонсы</option>
+                    </select>
+                    <select id="newsGameFilter" class="filter-select">
+                        <option value="">Все игры</option>
+                        <option value="cs2">🔫 CS2</option>
+                        <option value="valorant">💥 Valorant</option>
+                        <option value="dota2">⚔️ Dota 2</option>
+                        <option value="lol">⚡ LoL</option>
+                    </select>
+                </div>
+                <div class="search-group">
+                    <input type="text" id="newsSearch" placeholder="Поиск новостей..." class="search-input">
+                    <button class="btn-secondary" onclick="newsManager.exportNewsToCSV()">📊 Экспорт CSV</button>
+                </div>
+            </div>
+
+            <div class="news-container">
+                <div class="news-main" id="featuredNews">
+                    <!-- Главная новость -->
+                </div>
+                
+                <div class="news-sidebar">
+                    <div class="sidebar-section">
+                        <h3>🔥 Горячие новости</h3>
+                        <div class="hot-news-list" id="hotNews">
+                            <!-- Горячие новости -->
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>📈 Популярное</h3>
+                        <div class="popular-news-list" id="popularNews">
+                            <!-- Популярные новости -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news-grid" id="newsGrid">
+                <!-- Все новости -->
+            </div>
+
+            <div class="load-more-container">
+                <button class="btn-secondary" id="loadMoreNews">📰 Загрузить еще новости</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🎮 ESPORTS PORTAL</h3>
+                    <p>Все для киберспортсменов</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Разделы</h4>
+                    <a href="/tournaments">Турниры</a>
+                    <a href="/teams">Команды</a>
+                    <a href="/news">Новости</a>
+                    <a href="/stats">Статистика</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Игры</h4>
+                    <a href="#">CS2</a>
+                    <a href="#">Valorant</a>
+                    <a href="#">Dota 2</a>
+                    <a href="#">LoL</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Киберспорт Портал. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/news.js"></script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Киберспорт Портал - Главная</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/modal.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>🎮 ESPORTS PORTAL</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="/" class="nav-link active">Главная</a>
+                <a href="/tournaments" class="nav-link">Турниры</a>
+                <a href="/teams" class="nav-link">Команды</a>
+                <a href="/news" class="nav-link">Новости</a>
+                <a href="/stats" class="nav-link">Статистика</a>
+                <a href="/profile" class="nav-link">Профиль</a>
+            </div>
+            <div class="nav-auth">
+                <button class="btn-login">Войти</button>
+                <button class="btn-register">Регистрация</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">КИБЕРСПОРТ ПОРТАЛ</h1>
+            <p class="hero-subtitle">Все киберспортивные события в одном месте</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number" id="totalPlayers">0</div>
+                    <div class="stat-label">Игроков</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" id="activeTournaments">0</div>
+                    <div class="stat-label">Турниров</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" id="totalPrize">$0</div>
+                    <div class="stat-label">Призовой фонд</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">🔥 Ближайшие турниры</h2>
+            <div class="tournaments-grid" id="featuredTournaments">
+                <!-- Турниры загружаются через JS -->
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">🏆 Топ команды</h2>
+            <div class="teams-grid" id="topTeams">
+                <!-- Команды загружаются через JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Обновленная секция регистрации с CSV -->
+    <section class="section">
+        <div class="container">
+            <div class="registration-section">
+                <div class="registration-info">
+                    <h2>Присоединяйся к сообществу</h2>
+                    <p>Стань частью киберспортивного сообщества. Участвуй в турнирах, находи команду и следи за профессиональной сценой.</p>
+                    
+                    <!-- Кнопка просмотра зарегистрированных игроков -->
+                    <div class="registration-actions">
+                        <button class="btn-secondary" id="viewPlayersBtn">
+                            👥 Показать всех игроков
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="registration-forms">
+                    <!-- Быстрая регистрация -->
+                    <div class="registration-form">
+                        <h3>🚀 Быстрая регистрация</h3>
+                        <form id="quickRegisterForm">
+                            <div class="form-group">
+                                <input type="text" name="nickname" placeholder="Игровой никнейм" required>
+                            </div>
+                            <div class="form-group">
+                                <select name="game" required>
+                                    <option value="">Выберите игру</option>
+                                    <option value="cs2">Counter-Strike 2</option>
+                                    <option value="valorant">Valorant</option>
+                                    <option value="dota2">Dota 2</option>
+                                    <option value="lol">League of Legends</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="rank" placeholder="Ранг в игре (опционально)">
+                            </div>
+                            <div class="form-group">
+                                <select name="experience">
+                                    <option value="beginner">Новичок</option>
+                                    <option value="intermediate">Опытный</option>
+                                    <option value="professional">Профессионал</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn-primary">🎮 Зарегистрироваться</button>
+                        </form>
+                    </div>
+
+                    <!-- CSV регистрация -->
+                    <div class="csv-registration">
+                        <h3>📊 Массовая регистрация из CSV</h3>
+                        <div class="csv-upload-area">
+                            <input type="file" id="csvFile" accept=".csv" class="file-input">
+                            <label for="csvFile" class="file-label">
+                                📁 Выберите CSV файл
+                            </label>
+                            <button class="btn-primary" id="csvRegisterBtn">
+                                📤 Загрузить и зарегистрировать
+                            </button>
+                        </div>
+                        
+                        <div class="csv-info">
+                            <h4>📋 Формат CSV файла:</h4>
+                            <div class="csv-example">
+                                <code>
+nickname,game,email,rank,experience
+Player1,cs2,player1@email.com,Global Elite,professional
+Player2,valorant,player2@email.com,Radiant,intermediate
+                                </code>
+                            </div>
+                            <button class="btn-secondary btn-sm" onclick="esportsPortal.downloadCSVTemplate()">
+                                📥 Скачать шаблон CSV
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция новостей -->
+    <section class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">📰 Последние новости</h2>
+            <div class="news-grid" id="latestNews">
+                <!-- Новости загружаются через JS -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🎮 ESPORTS PORTAL</h3>
+                    <p>Все для киберспортсменов</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Разделы</h4>
+                    <a href="/tournaments">Турниры</a>
+                    <a href="/teams">Команды</a>
+                    <a href="/news">Новости</a>
+                    <a href="/stats">Статистика</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Игры</h4>
+                    <a href="#">CS2</a>
+                    <a href="#">Valorant</a>
+                    <a href="#">Dota 2</a>
+                    <a href="#">LoL</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Регистрация</h4>
+                    <a href="#" onclick="esportsPortal.showRegisteredPlayers()">Все игроки</a>
+                    <a href="#" onclick="esportsPortal.downloadCSVTemplate()">Шаблон CSV</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Киберспорт Портал. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
